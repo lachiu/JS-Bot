@@ -13,5 +13,5 @@ bot.once('ready', () => {
 	console.log('Ready!');
 });
 
-// the bot logs in
+// the bot logs in now
 bot.login(process.env.TOKEN);
