@@ -2,5 +2,8 @@
   "dir": "C:/Users/gamingpc/Downloads/Coding/Bots/JS",
 	"botname": "JS-Eindwerk-Bot",
   "language": "en",
-  "qty-polls": "1"
+  "prefix": "!",
+  "administrator": [ 123456789, 123456789, 123456789 ],
+  "moderator": [ 123456789, 123456789, 123456789 ],
+  "qtypolls": "1"
 }
