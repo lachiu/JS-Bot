@@ -8,6 +8,7 @@ module.exports = {
 	log: 'moderation',
 	args: true,
 	usage: '<command>',
+	enabled: true,
 	execute(message, args) {
 		const commandName = args[0].toLowerCase();
 		const command = message.client.commands.get(commandName)

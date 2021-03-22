@@ -8,6 +8,7 @@ module.exports = {
 	log: 'moderation',
 	args: true,
 	usage: '<user>',
+	enabled: true,
 	execute(message, args) {
 		const taggedUser = message.mentions.users.first();
 
@@ -16,6 +17,6 @@ module.exports = {
 		}
 
 		message.channel.send(`You wanted to kick: ${taggedUser.username}`);
-		printing_log(`${ message.author.username } tried to kick ${ taggedUser.username }.`, 'moderation');
+		printing_log(`${ message.author.username } tried to kick ${ taggedUser.username }`, 'moderation');
 	},
 };

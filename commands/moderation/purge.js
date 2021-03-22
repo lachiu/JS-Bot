@@ -7,6 +7,7 @@ module.exports = {
 	log: 'moderation',
 	args: true,
 	usage: '<user>',
+	enabled: true,
 	execute(message, args) {
 		const amount = parseInt(args[0]) + 1;
 

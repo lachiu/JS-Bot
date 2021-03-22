@@ -6,6 +6,7 @@ module.exports = {
 	log: 'normal',
 	args: true,
 	usage: '',
+	enabled: true,
 	execute(message, args) {
 		if (args[0] === 'foo') {
 			return message.channel.send('bar');

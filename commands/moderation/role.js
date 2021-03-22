@@ -6,6 +6,7 @@ module.exports = {
 	log: 'moderation',
 	args: true,
 	usage: '<user> <role>',
+	enabled: true,
 	execute(message, args) {
 		message.channel.send('Role command is working!');
 	},

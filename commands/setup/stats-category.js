@@ -6,6 +6,7 @@ module.exports = {
 	log: 'moderation',
 	args: true,
 	usage: '',
+	enabled: true,
 	execute(message, args) {
 		message.channel.send('Pong.');
 	},

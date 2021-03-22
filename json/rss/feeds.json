@@ -1,0 +1,31 @@
+{
+    "feeds": [
+        {
+            "name": "De Standaard - BL",
+            "feed": "https://www.standaard.be/rss/section/1f2838d4-99ea-49f0-9102-138784c7ea7c",
+            "ttl": 5,
+            "logo": "./img/ds-krant.png",
+            "color": "#FF0000",
+            "url": "https://www.standaard.be",
+            "latest": "1616430673000"
+        },
+        {
+            "name": "De Standaard - BU",
+            "feed": "https://www.standaard.be/rss/section/e70ccf13-a2f0-42b0-8bd3-e32d424a0aa0",
+            "ttl": 5,
+            "logo": "./img/ds-krant.png",
+            "color": "#FF0000",
+            "url": "https://www.standaard.be",
+            "latest": "1616427914000"
+        },
+        {
+            "name": "De Standaard - Cultuur",
+            "feed": "https://www.standaard.be/rss/section/ab8d3fd8-bf2f-487a-818b-9ea546e9a859",
+            "ttl": 5,
+            "logo": "./img/ds-krant.png",
+            "color": "#FF0000",
+            "url": "https://www.standaard.be",
+            "latest": "1616410760000"
+        }
+    ]
+}

@@ -25,7 +25,7 @@ module.exports = function(input, level) {
 		file = '/log.txt';
 	}
 	else if (level == 'moderation') {
-		punctuation = '.';
+		punctuation = '!';
 		file = '/mod-log.txt';
 	}
 	else if (level == 'danger') {
