@@ -1,31 +1,37 @@
 {
     "feeds": [
         {
-            "name": "De Standaard - BL",
+            "name": "De Standaard",
+            "description": "De Standaard - Binnenland",
             "feed": "https://www.standaard.be/rss/section/1f2838d4-99ea-49f0-9102-138784c7ea7c",
             "ttl": 5,
-            "logo": "./img/ds-krant.png",
+            "logo": "ds-krant.png",
             "color": "#FF0000",
             "url": "https://www.standaard.be",
-            "latest": "1616430673000"
+            "channel": "824471758765555712",
+            "latest": "0"
         },
         {
-            "name": "De Standaard - BU",
+            "name": "De Standaard",
+            "description": "De Standaard - Buitenland",
             "feed": "https://www.standaard.be/rss/section/e70ccf13-a2f0-42b0-8bd3-e32d424a0aa0",
             "ttl": 5,
-            "logo": "./img/ds-krant.png",
+            "logo": "ds-krant.png",
             "color": "#FF0000",
             "url": "https://www.standaard.be",
-            "latest": "1616427914000"
+            "channel": "",
+            "latest": "0"
         },
         {
-            "name": "De Standaard - Cultuur",
+            "name": "De Standaard",
+            "description": "De Standaard - Cultuur",
             "feed": "https://www.standaard.be/rss/section/ab8d3fd8-bf2f-487a-818b-9ea546e9a859",
             "ttl": 5,
-            "logo": "./img/ds-krant.png",
+            "logo": "ds-krant.png",
             "color": "#FF0000",
             "url": "https://www.standaard.be",
-            "latest": "1616410760000"
+            "channel": "824471832836440104",
+            "latest": "1616694550000"
         }
     ]
 }
