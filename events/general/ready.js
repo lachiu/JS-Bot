@@ -8,7 +8,7 @@ module.exports = {
 	execute(bot) {
 		bot.user.setActivity('you.', { type: 'WATCHING' });
 		// feed(bot);
-		// setInterval(feed_nieuws(bot), 1000);
+		// setInterval(() => feed(bot), 600000);
 		feed_nieuws(bot);
 		printing_log('Ready', 'normal');
 	},

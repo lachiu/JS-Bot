@@ -8,9 +8,17 @@ const { feeds } = require('../../json/rss/feeds.json');
 
 module.exports = function(bot) {
 	let x, len, tmp_channel;
-	for (x = 0, len = feeds.length - 1; x < len; x++) {
-		console.log(x);
-		console.log(len);
+
+	function replace(txt) {
+		txt.replace('<P>', '');
+		txt.replace('</P>', '');
+		txt.replace('<p>', '');
+		txt.replace('</p>', '');
+		txt.replace('<i>', '*');
+		txt.replace('</i>', '*');
+		return txt;
+	}
+	for (x = 0, len = feeds.length; x < len; x++) {
 		tmp_channel = feeds[x].channel || rsschannel;
 		const channel = bot.channels.cache.get(tmp_channel);
 		const feedparser = new parser();
@@ -38,29 +46,34 @@ module.exports = function(bot) {
 			const stream = this; // `this` is `feedparser`, which is a stream
 			const meta = this.meta; // **NOTE** the "meta" is always available in the context of the feedparser instance
 			let item;
-			console.log(x);
+			let array = [];
 			while (item = stream.read()) {
-				console.log(x);
-				if (feeds[x].latest < new Date(item.pubDate).getTime()) {
-					const embed = new Discord.MessageEmbed()
-						.setColor(feeds[x].color)
-						.setTitle(item.title)
-						.setURL(item.link)
-						.setAuthor(feeds[x].name, '', feeds[x].url)
-						.setDescription(item.description)
-						.attachFiles([`${ imagedir }${ feeds[x].logo }`])
-						.setThumbnail(`attachment://${ feeds[x].logo }`)
-						.setImage(item.enclosures[0].url)
-						.setTimestamp()
-						.setFooter(feeds[x].description);
-					feeds[x].latest = new Date(item.pubDate).getTime().toString();
-					const object = { 'feeds' : feeds };
-					const data = JSON.stringify(object, null, 4);
-					fs.writeFile('./json/rss/feeds.json', data, (err) => {
-						if (err) throw err;
-					});
-					channel.send(embed);
-				}
+				// console.log(`Titel: ${ item.title }\nBeschrijving: ${ replace(item.description) }\n`);
+				array.push(item);
+			}
+			array.forEach(makeEmbed);
+			console.log(x);
+			function makeEmbed(value) {
+				console.log(feeds);
+				replace(value.description);
+				const embed = new Discord.MessageEmbed()
+					.setColor(feeds[0].color)
+					.setTitle(value.title)
+					.setURL(value.link)
+					.setAuthor(feeds[x].name, '', feeds[x].url)
+					.setDescription(replace(item.description))
+					.attachFiles([`${ imagedir }${ feeds[x].logo }`])
+					.setThumbnail(`attachment://${ feeds[x].logo }`)
+					.setImage(value.enclosures[0].url)
+					.setTimestamp()
+					.setFooter(feeds[x].description);
+				feeds[x].latest = new Date(value.pubDate).getTime().toString();
+				const object = { 'feeds' : feeds };
+				const data = JSON.stringify(object, null, 4);
+				fs.writeFileSync('./json/rss/feeds.json', data, (err) => {
+					if (err) throw err;
+				});
+				channel.send(embed);
 			}
 		});
 	}

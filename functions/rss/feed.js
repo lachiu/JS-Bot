@@ -23,7 +23,8 @@ module.exports = async function(bot) {
 		const feed = await parser.parse(buffer.toString());
 		let y;
 		const items = feed.rss.channel.item;
-		console.log(items[0]);
+		// Enclosure tags werken niet.
+		// console.log(items);
 		for (y = 0; y < items.length; y++) {
 			if (feeds[x].latest < new Date(items[y].pubDate).getTime()) {
 				const item = items[y];
@@ -32,7 +33,7 @@ module.exports = async function(bot) {
 					.setTitle(item.title)
 					.setURL(item.link)
 					.setAuthor(feeds[x].name, '', feeds[x].url)
-					.setDescription(item.description)
+					.setDescription(item.description.slice(9, item.description.length - 10))
 					.attachFiles([`${ imagedir }${ feeds[x].logo }`])
 					.setThumbnail(`attachment://${ feeds[x].logo }`)
 					// .setImage(image)

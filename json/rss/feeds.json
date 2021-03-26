@@ -9,7 +9,7 @@
             "color": "#FF0000",
             "url": "https://www.standaard.be",
             "channel": "824471758765555712",
-            "latest": "0"
+            "latest": "1616708551000"
         },
         {
             "name": "De Standaard",
@@ -20,7 +20,7 @@
             "color": "#FF0000",
             "url": "https://www.standaard.be",
             "channel": "",
-            "latest": "0"
+            "latest": "1616708881000"
         },
         {
             "name": "De Standaard",
@@ -31,7 +31,7 @@
             "color": "#FF0000",
             "url": "https://www.standaard.be",
             "channel": "824471832836440104",
-            "latest": "1616694550000"
+            "latest": "1616598578000"
         }
     ]
 }
